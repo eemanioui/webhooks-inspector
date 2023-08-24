@@ -2,13 +2,12 @@ import express, { Request, Response } from 'express';
 import binsService from './services/bins';
 import requestsService from './services/requests';
 import cors from 'cors';
-import * as asyncErrors from 'express-async-errors';
+require('express-async-errors')
 
 const app = express();
 
 app.use(express.json());
 app.use(cors());
-app.use(asyncErrors());
 
 async function storeRequest(req: Request, binId: string) {
   const { request } = await requestsService.addRequest(binId, req);
