@@ -1,6 +1,6 @@
 import * as dotenv from 'dotenv';
 import mongoose from 'mongoose';
-import { RequestModel } from '../model/request';
+import { RequestModel } from '../models/request';
 
 dotenv.config();
 
