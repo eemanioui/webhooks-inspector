@@ -40,5 +40,3 @@ INSERT INTO
         'GET',
         '/'
      );
-
-
