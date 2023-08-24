@@ -7,7 +7,14 @@
     "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint 'src/**/*.ts'",
-    "dev": "ts-node-dev ./src/index.ts"
+    "dev": "ts-node-dev ./src/index.ts",
+    "pg-setup": "sudo service postgresql start && npm run pg-auth && npm run pg-schema && npm run pg-seed",
+    "pg-auth": "psql -d postgres -a -f ./src/db/pg/auth.sql",
+    "pg-schema": "psql -U inspector -d webhooks -a -f ./src/db/pg/schema.sql",
+    "pg-seed": "psql -U inspector -d webhooks -a -f ./src/db/pg/seed.sql",
+    "pg-connect": "psql -U inspector -d webhooks",
+    "pg-reset": "psql -U inspector -d postgres -a -f ./src/db/pg/reset.sql && npm run pg-schema && npm run pg-seed",
+    "pg-cleanup": "psql -U postgres -a -f ./src/db/pg/cleanup.sql"
   },
   "keywords": [],
   "author": " <El Mehdi>",
