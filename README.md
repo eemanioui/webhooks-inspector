@@ -1,1 +1,1 @@
-# WebhookInspector
+# Webhooks Inspector
