@@ -13,7 +13,7 @@ const addRequestPG = async (binId: string, req: Request) => {
 
   const { id: binIdFK } = rows[0];
 
-  const query2 = 'INSERT INTO requests (bin_id_fk, request_id, header_accept, header_content_length, header_content_type, header_host, header_user_agent, method, path) VALUES ($1, $2, $3, 4$, 5$, 6$, 7$, 8$, 9$)';
+  const query2 = 'INSERT INTO requests (bin_id_fk, request_id, header_accept, header_content_length, header_content_type, header_host, header_user_agent, method, path) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9)';
 
   const accept        = req.get('Accept');
   const contentLength = req.get('Content-Length');
