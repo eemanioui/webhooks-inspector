@@ -6,7 +6,7 @@ interface BinIdUrlProps {
 }
 
 function BinId({ binId }: BinIdUrlProps) {
-  const notifyCopyEndpoint = () => toast('Copied Bin ID', { duration: 2000, icon: '🐆' });
+  const notifyCopyEndpoint = () => toast('Copied Bin ID', { duration: 2000, icon: '🔍' });
 
   return (
     <div className="mt-6 flex items-center">

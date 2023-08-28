@@ -10,7 +10,7 @@ interface EndpointUrlProps {
 function EndpointUrl({ binId }: EndpointUrlProps) {
   const endpoint = `${WEBHOOK_HOST}/${binId}`;
 
-  const notifyCopyEndpoint = () => toast('Copied endpoint', { duration: 2000, icon:  '🐆'});
+  const notifyCopyEndpoint = () => toast('Copied endpoint', { duration: 2000, icon: '🔍' });
 
   return (
     <div className="mt-3 mb-6 flex items-center">
