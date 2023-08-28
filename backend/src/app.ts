@@ -29,7 +29,7 @@ function emitRequest(request: any, binId: string) {
 
 // Retrieve bin
 app.get('/bins/:id', async (req: Request, res: Response) => {
-  const binId = req.params.id;
+  const { id: binId } = req.params;
   
   const binWithRequests = await binsService.getBinWithRequests(binId);
 
@@ -45,8 +45,8 @@ app.post('/bins', async (_: Request, res: Response) => {
 
 // Update bin name
 app.put('/bins/:id', async (req: Request, res: Response) => {
-  const binId = req.params.id;
-  const updatedName = req.body['new_name'];
+  const { id: binId } = req.params;
+  const updatedName = req.body['newName'];
   
   await binsService.updateBinName(binId, updatedName);
   
